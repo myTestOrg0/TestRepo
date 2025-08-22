@@ -1,0 +1,17 @@
+name: Count Secret Characters
+
+on:
+  push:
+
+jobs:
+  count-secret:
+    runs-on: ubuntu-latest
+    environment: testenv
+
+    steps:
+      - name: Count characters in secret
+        run: |
+          SECRET_LENGTH=${#MY_SECRET}
+          echo "The secret contains $SECRET_LENGTH characters"
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
