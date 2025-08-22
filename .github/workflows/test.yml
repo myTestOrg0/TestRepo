@@ -2,6 +2,7 @@ name: Count Secret Characters
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   count-secret:
